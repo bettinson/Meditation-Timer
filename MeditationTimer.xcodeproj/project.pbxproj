@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B55E19845C8000827C43 /* AppDelegate.swift */; };
+		BBE2B56119845C8000827C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B56019845C8000827C43 /* ViewController.swift */; };
+		BBE2B56419845C8000827C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56219845C8000827C43 /* Main.storyboard */; };
+		BBE2B56619845C8000827C43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56519845C8000827C43 /* Images.xcassets */; };
+		BBE2B57219845C8100827C43 /* MeditationTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBE2B56C19845C8100827C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBE2B55119845C8000827C43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBE2B55819845C8000827C43;
+			remoteInfo = MeditationTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBE2B55919845C8000827C43 /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE2B55D19845C8000827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE2B55E19845C8000827C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBE2B56019845C8000827C43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBE2B56319845C8000827C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBE2B56519845C8000827C43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE2B57019845C8100827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBE2B55619845C8000827C43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE2B56819845C8100827C43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBE2B55019845C8000827C43 = {
+			isa = PBXGroup;
+			children = (
+				BBE2B55B19845C8000827C43 /* MeditationTimer */,
+				BBE2B56E19845C8100827C43 /* MeditationTimerTests */,
+				BBE2B55A19845C8000827C43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBE2B55A19845C8000827C43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2B55919845C8000827C43 /* MeditationTimer.app */,
+				BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBE2B55B19845C8000827C43 /* MeditationTimer */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2B55E19845C8000827C43 /* AppDelegate.swift */,
+				BBE2B56019845C8000827C43 /* ViewController.swift */,
+				BBE2B56219845C8000827C43 /* Main.storyboard */,
+				BBE2B56519845C8000827C43 /* Images.xcassets */,
+				BBE2B55C19845C8000827C43 /* Supporting Files */,
+			);
+			path = MeditationTimer;
+			sourceTree = "<group>";
+		};
+		BBE2B55C19845C8000827C43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2B55D19845C8000827C43 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBE2B56E19845C8100827C43 /* MeditationTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */,
+				BBE2B56F19845C8100827C43 /* Supporting Files */,
+			);
+			path = MeditationTimerTests;
+			sourceTree = "<group>";
+		};
+		BBE2B56F19845C8100827C43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2B57019845C8100827C43 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBE2B55819845C8000827C43 /* MeditationTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimer" */;
+			buildPhases = (
+				BBE2B55519845C8000827C43 /* Sources */,
+				BBE2B55619845C8000827C43 /* Frameworks */,
+				BBE2B55719845C8000827C43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeditationTimer;
+			productName = MeditationTimer;
+			productReference = BBE2B55919845C8000827C43 /* MeditationTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBE2B56A19845C8100827C43 /* MeditationTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimerTests" */;
+			buildPhases = (
+				BBE2B56719845C8100827C43 /* Sources */,
+				BBE2B56819845C8100827C43 /* Frameworks */,
+				BBE2B56919845C8100827C43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBE2B56D19845C8100827C43 /* PBXTargetDependency */,
+			);
+			name = MeditationTimerTests;
+			productName = MeditationTimerTests;
+			productReference = BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBE2B55119845C8000827C43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Matt Bettinson";
+				TargetAttributes = {
+					BBE2B55819845C8000827C43 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					BBE2B56A19845C8100827C43 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = BBE2B55819845C8000827C43;
+					};
+				};
+			};
+			buildConfigurationList = BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "MeditationTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBE2B55019845C8000827C43;
+			productRefGroup = BBE2B55A19845C8000827C43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBE2B55819845C8000827C43 /* MeditationTimer */,
+				BBE2B56A19845C8100827C43 /* MeditationTimerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBE2B55719845C8000827C43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE2B56419845C8000827C43 /* Main.storyboard in Resources */,
+				BBE2B56619845C8000827C43 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE2B56919845C8100827C43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBE2B55519845C8000827C43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE2B56119845C8000827C43 /* ViewController.swift in Sources */,
+				BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE2B56719845C8100827C43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE2B57219845C8100827C43 /* MeditationTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBE2B56D19845C8100827C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBE2B55819845C8000827C43 /* MeditationTimer */;
+			targetProxy = BBE2B56C19845C8100827C43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBE2B56219845C8000827C43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE2B56319845C8000827C43 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBE2B57319845C8100827C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBE2B57419845C8100827C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBE2B57619845C8100827C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MeditationTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BBE2B57719845C8100827C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MeditationTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BBE2B57919845C8100827C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MeditationTimer.app/MeditationTimer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MeditationTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		BBE2B57A19845C8100827C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MeditationTimer.app/MeditationTimer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MeditationTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "MeditationTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE2B57319845C8100827C43 /* Debug */,
+				BBE2B57419845C8100827C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE2B57619845C8100827C43 /* Debug */,
+				BBE2B57719845C8100827C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE2B57919845C8100827C43 /* Debug */,
+				BBE2B57A19845C8100827C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBE2B55119845C8000827C43 /* Project object */;
+}
