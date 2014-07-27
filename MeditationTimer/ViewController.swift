@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let time : NSDateComponents = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate:  NSDate())
     var startHour : Int = 0
     var startMinute : Int = 0
-    var initialDate : NSDate
+    var initialDate : NSDate = NSDate()
 
 
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startTimer(sender : AnyObject) {
-        self.initialDate = NSDate()
+        println(self.initialDate)
         let time : Int = Int(timePicker.countDownDuration) + ((Int(self.startHour) * 60) + Int(self.startMinute)) * 60;
         var countDownTime = Double(((Int(self.startHour) * 60) + Int(self.startMinute)) * 60)
         let countDownTimer = createTimer()
