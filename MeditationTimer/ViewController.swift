@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     var startMinute : Int = 0
     var startSecond : Int = 0
     var initialDate : NSDate = NSDate()
-    var initialTime       = 0
+    var duration       = 0
 
 
-    var secondCounter       = 60
+    var secondCounter       = 0
     var minuteCounter       = 60
     var hourCounter         = 24
     var totalSecondsElapsed = 0
@@ -48,21 +48,25 @@ class ViewController: UIViewController {
         println(minuteCounter)
         if timerIsDone() {
             self.countDownTimer.invalidate()
-            self.secondCounter = 60
+            self.secondCounter = 0
             self.minuteCounter = 60
             self.hourCounter = 24
         }
     }
     
     func updateTimeLabel() {
-        timerLabel.text = String(secondCounter) + ":" + String(minuteCounter)
+        if secondCounter == 0 {
+            timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+        } else {
+            timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
+        }
     }
     
     func timerIsDone() -> Bool {
-        if (initialTime <= totalSecondsElapsed){
+        if (duration <= totalSecondsElapsed){
             return true
         }
-        else if (initialTime >= totalSecondsElapsed) {
+        else if (duration >= totalSecondsElapsed) {
             return false
         }
         return false
@@ -74,41 +78,61 @@ class ViewController: UIViewController {
         startTimerButton.hidden = false
         stopTimerButton.hidden = true
         
+        self.secondCounter = 0
+        self.minuteCounter = 60
+        self.hourCounter = 24
         self.countDownTimer.invalidate()
     }
     
     @IBAction func startTimer(sender : AnyObject) {
         println(self.initialDate)
-        initialTime = Int(self.timePicker.countDownDuration)
-        let time : Int = Int(timePicker.countDownDuration) + ((Int(self.startHour) * 60) + Int(self.startMinute)) * 60;
+        duration = Int(self.timePicker.countDownDuration)
+        
+        minuteCounter = time.minute
+        hourCounter = time.hour
+        
+        /*
+        NSTimeInterval duration = datePickerView.countDownDuration;
+        int hours = (int)(duration/3600.0f);
+        int minutes = ((int)duration - (hours * 3600))/60;
+        */
+        
+        hourCounter = Int(Float(duration) / 3600.0)
+        minuteCounter = Int(duration - (hourCounter * 3600))/60
+        
+//        let time : Int = Int(timePicker.countDownDuration) + ((Int(self.startHour) * 60) + Int(self.startMinute)) * 60;
 //        var countDownTime = Double(((Int(self.startHour) * 60) + Int(self.startMinute)) * 60)
+        
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         hourCounter = Int(startHour)
         timePicker.hidden = true
         timerLabel.hidden = false
         startTimerButton.hidden = true
         stopTimerButton.hidden = false
-        print (initialTime)
+        print (duration)
+        updateTimeLabel()
     }
     
     //Mark - tick
     
     func tickSecond (){
         self.totalSecondsElapsed++
-        self.secondCounter--
-        if (self.secondCounter == 0) {
+       
+        if (self.secondCounter == 0 || self.secondCounter % 60 == 0) {
             tickMinute()
         }
+        self.secondCounter--
         updateTimeLabel()
     }
     
     func tickMinute (){
-        self.minuteCounter--
-        self.secondCounter = 60
+        
         if (self.minuteCounter == 0) {
             tickHour()
         }
+        self.minuteCounter--
         updateTimeLabel()
+        self.secondCounter = 60
     }
     
     func tickHour (){
@@ -116,10 +140,5 @@ class ViewController: UIViewController {
         self.minuteCounter = 60
         updateTimeLabel()
     }
-
-        
-    
-    
-
 }
 
