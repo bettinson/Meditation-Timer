@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     var initialTime       = 0
 
 
-    var secondCounter       = 0
-    var minuteCounter       = 0
-    var hourCounter         = 0
+    var secondCounter       = 60
+    var minuteCounter       = 60
+    var hourCounter         = 24
     var totalSecondsElapsed = 0
     var countDownTimer : NSTimer = NSTimer()
     
@@ -48,9 +48,9 @@ class ViewController: UIViewController {
         println(minuteCounter)
         if timerIsDone() {
             self.countDownTimer.invalidate()
-            self.secondCounter = 0
-            self.minuteCounter = 0
-            self.hourCounter = 0
+            self.secondCounter = 60
+            self.minuteCounter = 60
+            self.hourCounter = 24
         }
     }
     
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     func timerIsDone() -> Bool {
-        if (initialTime < totalSecondsElapsed){
+        if (initialTime <= totalSecondsElapsed){
             return true
         }
         else if (initialTime >= totalSecondsElapsed) {
@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         let time : Int = Int(timePicker.countDownDuration) + ((Int(self.startHour) * 60) + Int(self.startMinute)) * 60;
 //        var countDownTime = Double(((Int(self.startHour) * 60) + Int(self.startMinute)) * 60)
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
+        hourCounter = Int(startHour)
         timePicker.hidden = true
         timerLabel.hidden = false
         startTimerButton.hidden = true
@@ -94,25 +95,25 @@ class ViewController: UIViewController {
     
     func tickSecond (){
         self.totalSecondsElapsed++
-        self.secondCounter++
-        if (self.secondCounter % 60 == 0) {
+        self.secondCounter--
+        if (self.secondCounter == 0) {
             tickMinute()
         }
         updateTimeLabel()
     }
     
     func tickMinute (){
-        self.minuteCounter++
-        self.secondCounter = 0
-        if (self.minuteCounter % 60 == 0) {
+        self.minuteCounter--
+        self.secondCounter = 60
+        if (self.minuteCounter == 0) {
             tickHour()
         }
         updateTimeLabel()
     }
     
     func tickHour (){
-        hourCounter++
-        self.minuteCounter = 0
+        hourCounter--
+        self.minuteCounter = 60
         updateTimeLabel()
     }
 
