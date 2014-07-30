@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D88198941CF00B92D70 /* DACircularProgressView.m */; };
+		BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */; };
+		BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */; };
 		BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B55E19845C8000827C43 /* AppDelegate.swift */; };
 		BBE2B56119845C8000827C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B56019845C8000827C43 /* ViewController.swift */; };
 		BBE2B56419845C8000827C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56219845C8000827C43 /* Main.storyboard */; };
 		BBE2B56619845C8000827C43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56519845C8000827C43 /* Images.xcassets */; };
 		BBE2B57219845C8100827C43 /* MeditationTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */; };
+		BBFCB40C1986FE1A002BD8EA /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB389D86198941CF00B92D70 /* MeditationTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeditationTimer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB389D87198941CF00B92D70 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		BB389D88198941CF00B92D70 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		BB389D89198941CF00B92D70 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg_it.otf; path = ../../../../../Downloads/Brandon_reg_it.otf; sourceTree = "<group>"; };
 		BBE2B55919845C8000827C43 /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B55D19845C8000827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B55E19845C8000827C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +44,7 @@
 		BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B57019845C8100827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimerTests.swift; sourceTree = "<group>"; };
+		BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg.otf; path = ../../../../../Downloads/Brandon_reg.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB389D85198941BF00B92D70 /* Open Source */ = {
+			isa = PBXGroup;
+			children = (
+				BB389D87198941CF00B92D70 /* DACircularProgressView.h */,
+				BB389D88198941CF00B92D70 /* DACircularProgressView.m */,
+				BB389D89198941CF00B92D70 /* DALabeledCircularProgressView.h */,
+				BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */,
+				BB389D86198941CF00B92D70 /* MeditationTimer-Bridging-Header.h */,
+			);
+			name = "Open Source";
+			sourceTree = "<group>";
+		};
 		BBE2B55019845C8000827C43 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +102,7 @@
 				BBE2B56019845C8000827C43 /* ViewController.swift */,
 				BBE2B56219845C8000827C43 /* Main.storyboard */,
 				BBE2B56519845C8000827C43 /* Images.xcassets */,
+				BB389D85198941BF00B92D70 /* Open Source */,
 				BBE2B55C19845C8000827C43 /* Supporting Files */,
 			);
 			path = MeditationTimer;
@@ -87,6 +111,8 @@
 		BBE2B55C19845C8000827C43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */,
+				BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */,
 				BBE2B55D19845C8000827C43 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -191,6 +217,8 @@
 			files = (
 				BBE2B56419845C8000827C43 /* Main.storyboard in Resources */,
 				BBE2B56619845C8000827C43 /* Images.xcassets in Resources */,
+				BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */,
+				BBFCB40C1986FE1A002BD8EA /* Brandon_reg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +237,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE2B56119845C8000827C43 /* ViewController.swift in Sources */,
+				BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */,
+				BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */,
 				BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,10 +355,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mattbettinson/Downloads/TestFlightSDK3,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MeditationTimer/MeditationTimer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -337,10 +374,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mattbettinson/Downloads/TestFlightSDK3,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MeditationTimer/MeditationTimer-Bridging-Header.h";
 			};
 			name = Release;
 		};
