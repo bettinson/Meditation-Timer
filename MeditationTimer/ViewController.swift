@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet var stopTimerButton : UIButton
     @IBOutlet var intitialTimeLabel : UILabel
     
-    
     var progressView: DACircularProgressView = DACircularProgressView()
     
     let time : NSDateComponents = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate:  NSDate())
