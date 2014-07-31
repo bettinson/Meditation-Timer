@@ -17,19 +17,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TdP-T8-dOX">
-                                <rect key="frame" x="50" y="121" width="220" height="162"/>
+                                <rect key="frame" x="68" y="120" width="186" height="180"/>
                                 <date key="date" timeIntervalSinceReferenceDate="428104902.251728">
                                     <!--<__NSDate Class=2014-07-26 22:01:42 +0000 timeInterval=428104902.251728 ISO8601=2014-07-26T18:01:42.252-0400>-->
                                 </date>
                             </datePicker>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-kE-4yk">
-                                <rect key="frame" x="50" y="161" width="220" height="82"/>
+                                <rect key="frame" x="50" y="169" width="220" height="82"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-ks-BMg">
-                                <rect key="frame" x="20" y="293" width="280" height="63"/>
+                                <rect key="frame" x="20" y="333" width="280" height="63"/>
                                 <state key="normal" title="Begin Meditation">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-Tn-gUe">
-                                <rect key="frame" x="50" y="291" width="220" height="66"/>
+                                <rect key="frame" x="50" y="331" width="220" height="66"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,12 +46,24 @@
                                     <action selector="stopTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9lZ-30-GWt"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-fH-FfZ">
+                                <rect key="frame" x="115" y="34" width="90" height="32"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw7-9p-F1N">
+                                <rect key="frame" x="68" y="128" width="186" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="intitialTimeLabel" destination="fw7-9p-F1N" id="uFn-Qd-aEI"/>
                         <outlet property="startTimerButton" destination="ImO-ks-BMg" id="9kX-OV-xNf"/>
                         <outlet property="stopTimerButton" destination="GHA-Tn-gUe" id="L2M-4k-1nv"/>
                         <outlet property="timePicker" destination="TdP-T8-dOX" id="DKD-Be-LBa"/>
@@ -60,7 +72,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="348"/>
+            <point key="canvasLocation" x="305" y="357"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="96" height="30"/>
+    </resources>
 </document>

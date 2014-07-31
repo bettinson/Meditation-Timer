@@ -4,8 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Brandon_reg_it.otf</string>
 		<string>Brandon_reg.otf</string>
+		<string>Brandon_thin.otf</string>
+		<string>Brandon_reg_it.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

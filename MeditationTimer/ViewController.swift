@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var startTimerButton : UIButton
     @IBOutlet var timerLabel : UILabel
     @IBOutlet var stopTimerButton : UIButton
+    @IBOutlet var intitialTimeLabel : UILabel
     
     
     var progressView: DACircularProgressView = DACircularProgressView()
@@ -33,14 +34,16 @@ class ViewController: UIViewController {
     var countDownTimer : NSTimer = NSTimer()
     var progressViewAnimationTimer : NSTimer = NSTimer()
     
+    var timeLabelUpdated : Bool = false
+    
     var progressTicks : Double = 0
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        startProgressAnimation()
         UIButton.appearance().font = UIFont(name: font, size: 20)
-        
+        view.bringSubviewToFront(timePicker)
         self.initialDate    = NSDate()
         
         // Default is 20 minutes
@@ -51,8 +54,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     func updateTimeLabel() {
+        
         if (secondCounter == 0 || secondCounter < 10)  {
             timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
         } else {
@@ -77,10 +82,15 @@ class ViewController: UIViewController {
                 timerLabel.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
             }
         }
+        if (!timeLabelUpdated) {
+            intitialTimeLabel.text = timerLabel.text
+            timeLabelUpdated = true
+        }
     }
     
     func timerIsDone() -> Bool {
         if (duration <= totalSecondsElapsed){
+            timeLabelUpdated = false
             return true
         }
         else if (duration >= totalSecondsElapsed) {
@@ -92,18 +102,21 @@ class ViewController: UIViewController {
     // Mark Buttons
     
     @IBAction func stopTimer(sender : AnyObject) {
-        UILabel.appearance().font = UIFont(name: "Helvetica", size: 20)
-        progressView.removeFromSuperview()
+        UILabel.appearance().font = UIFont(name: font, size: 10)
         timePicker.hidden = false
         timerLabel.hidden = true
         startTimerButton.hidden = false
         stopTimerButton.hidden = true
+        intitialTimeLabel.hidden = true
+        timeLabelUpdated = false
         
         self.secondCounter = 0
         self.minuteCounter = 60
         self.hourCounter = 24
         self.countDownTimer.invalidate()
         self.progressViewAnimationTimer.invalidate()
+        startProgressAnimation()
+        view.bringSubviewToFront(timePicker)
     }
     
     @IBAction func startTimer(sender : AnyObject) {
@@ -114,8 +127,6 @@ class ViewController: UIViewController {
         progressTicks = (1/(Double(duration))) * 0.05
         println(progressTicks)
         
-        startProgressAnimation()
-        
         minuteCounter = time.minute
         hourCounter = time.hour
         
@@ -125,7 +136,6 @@ class ViewController: UIViewController {
 //        let time : Int = Int(timePicker.countDownDuration) + ((Int(self.startHour) * 60) + Int(self.startMinute)) * 60;
 //        var countDownTime = Double(((Int(self.startHour) * 60) + Int(self.startMinute)) * 60)
         
-        
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
         
@@ -133,6 +143,7 @@ class ViewController: UIViewController {
         timerLabel.hidden = false
         startTimerButton.hidden = true
         stopTimerButton.hidden = false
+        intitialTimeLabel.hidden = false
         print (duration)
         println (hourCounter)
         updateTimeLabel()
@@ -142,9 +153,9 @@ class ViewController: UIViewController {
     
     func startProgressAnimation () {
         progressView.hidden = false
-        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 10, y: (timePicker.bounds.height) / 2, width: 300, height: 300)
+        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 35, y: (timePicker.bounds.height) / 2, width: 250, height: 250)
         progressView = DACircularProgressView(frame: progressFrame)
-        progressView.trackTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 0.2)
+        progressView.trackTintColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
         progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
         self.view.addSubview(progressView)
         view.bringSubviewToFront(stopTimerButton)

@@ -130,7 +130,7 @@
         [circularProgressViewAppearance setTrackTintColor:[[UIColor alloc] initWithRed:82 green:161 blue:225 alpha:1]];
         [circularProgressViewAppearance setProgressTintColor:[[UIColor alloc] initWithRed:82 green:161 blue:225 alpha:1]];
         [circularProgressViewAppearance setBackgroundColor:[UIColor clearColor]];
-        [circularProgressViewAppearance setThicknessRatio:0.05f];
+        [circularProgressViewAppearance setThicknessRatio:0.04f];
         [circularProgressViewAppearance setRoundedCorners:NO];
         [circularProgressViewAppearance setClockwiseProgress:YES];
         
