@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         UIButton.appearance().font = UIFont(name: font, size: 20)
         
         self.initialDate    = NSDate()
+        
         // Default is 20 minutes
         self.timePicker.countDownDuration = 20 * 60
     }
@@ -52,11 +53,29 @@ class ViewController: UIViewController {
     }
 
     func updateTimeLabel() {
-        UILabel.appearance().font = UIFont(name: font, size: 50)
         if (secondCounter == 0 || secondCounter < 10)  {
             timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
         } else {
-            timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
+            if (hourCounter == 0){
+                timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
+            } else {
+                timerLabel.text =  String(Int(hourCounter)) + String(Int(minuteCounter)) + ":" + String(secondCounter)
+            }
+        }
+        if (hourCounter > 10) {
+            if (secondCounter == 0 || secondCounter < 10)  {
+                timerLabel.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+            } else {
+                timerLabel.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
+            }
+        }
+        else if (hourCounter > 0) {
+            println("Hourcounter is greater than zero")
+            if (secondCounter == 0 || secondCounter < 10)  {
+                timerLabel.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+            } else {
+                timerLabel.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
+            }
         }
     }
     
@@ -110,12 +129,12 @@ class ViewController: UIViewController {
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
         
-        hourCounter = Int(startHour)
         timePicker.hidden = true
         timerLabel.hidden = false
         startTimerButton.hidden = true
         stopTimerButton.hidden = false
         print (duration)
+        println (hourCounter)
         updateTimeLabel()
     }
     
@@ -125,9 +144,8 @@ class ViewController: UIViewController {
         progressView.hidden = false
         var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 10, y: (timePicker.bounds.height) / 2, width: 300, height: 300)
         progressView = DACircularProgressView(frame: progressFrame)
-        progressView.trackTintColor = UIColor(red: 82, green: 161, blue: 225, alpha: 1)
-        progressView.trackTintColor = UIColor.blueColor()
-        
+        progressView.trackTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 0.2)
+        progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
         self.view.addSubview(progressView)
         view.bringSubviewToFront(stopTimerButton)
     }
@@ -144,6 +162,7 @@ class ViewController: UIViewController {
         tickSecond()
         println(secondCounter)
         println(minuteCounter)
+        updateTimeLabel()
         
         if timerIsDone() {
             self.countDownTimer.invalidate()
@@ -160,7 +179,7 @@ class ViewController: UIViewController {
             tickMinute()
         }
         self.secondCounter--
-        updateTimeLabel()
+        
     }
     
     func tickMinute (){
@@ -169,14 +188,14 @@ class ViewController: UIViewController {
             tickHour()
         }
         self.minuteCounter--
-        updateTimeLabel()
+        
         self.secondCounter = 60
     }
     
     func tickHour (){
         hourCounter--
         self.minuteCounter = 60
-        updateTimeLabel()
+
     }
 }
 
