@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-    @IBOutlet var timePicker : UIDatePicker
-    @IBOutlet var startTimerButton : UIButton
-    @IBOutlet var timerLabel : UILabel
-    @IBOutlet var stopTimerButton : UIButton
-    @IBOutlet var intitialTimeLabel : UILabel
+    @IBOutlet var timePicker : UIDatePicker?
+    @IBOutlet var startTimerButton : UIButton?
+    @IBOutlet var timerLabel : UILabel?
+    @IBOutlet var stopTimerButton : UIButton?
+    @IBOutlet var intitialTimeLabel : UILabel?
     
     var progressView: DACircularProgressView = DACircularProgressView()
     
@@ -23,7 +24,9 @@ class ViewController: UIViewController {
     var startSecond : Int = 0
     var initialDate : NSDate = NSDate()
     var duration       = 0
-
+    var defaultBellSound : NSURL  = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("Bell", ofType: "wav"))
+    
+    var bellSound = AVAudioPlayer()
 
     var secondCounter       = 0
     var minuteCounter       = 60
@@ -38,15 +41,19 @@ class ViewController: UIViewController {
     var progressTicks : Double = 0
     
     override func viewDidLoad() {
+        bellSound = AVAudioPlayer(contentsOfURL: defaultBellSound, error: nil)
         
         super.viewDidLoad()
         startProgressAnimation()
-        UIButton.appearance().font = UIFont(name: font, size: 20)
-        view.bringSubviewToFront(timePicker)
+        startTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
+        stopTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
+        
+        timerLabel?.font = UIFont(name: font, size: 20)
+        view.bringSubviewToFront(timePicker!)
         self.initialDate    = NSDate()
         
         // Default is 20 minutes
-        self.timePicker.countDownDuration = 20 * 60
+        self.timePicker?.countDownDuration = 20 * 60
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,31 +65,31 @@ class ViewController: UIViewController {
     func updateTimeLabel() {
         
         if (secondCounter == 0 || secondCounter < 10)  {
-            timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+            timerLabel?.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
         } else {
             if (hourCounter == 0){
-                timerLabel.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
+                timerLabel?.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
             } else {
-                timerLabel.text =  String(Int(hourCounter)) + String(Int(minuteCounter)) + ":" + String(secondCounter)
+                timerLabel?.text =  String(Int(hourCounter)) + String(Int(minuteCounter)) + ":" + String(secondCounter)
             }
         }
         if (hourCounter > 10) {
             if (secondCounter == 0 || secondCounter < 10)  {
-                timerLabel.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+                timerLabel?.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
             } else {
-                timerLabel.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
+                timerLabel?.text = String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
             }
         }
         else if (hourCounter > 0) {
             println("Hourcounter is greater than zero")
             if (secondCounter == 0 || secondCounter < 10)  {
-                timerLabel.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+                timerLabel?.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
             } else {
-                timerLabel.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
+                timerLabel?.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
             }
         }
         if (!timeLabelUpdated) {
-            intitialTimeLabel.text = timerLabel.text
+            intitialTimeLabel?.text = timerLabel?.text
             timeLabelUpdated = true
         }
     }
@@ -90,6 +97,8 @@ class ViewController: UIViewController {
     func timerIsDone() -> Bool {
         if (duration <= totalSecondsElapsed){
             timeLabelUpdated = false
+            bellSound.prepareToPlay()
+            bellSound.play()
             return true
         }
         else if (duration >= totalSecondsElapsed) {
@@ -102,11 +111,11 @@ class ViewController: UIViewController {
     
     @IBAction func stopTimer(sender : AnyObject) {
         UILabel.appearance().font = UIFont(name: font, size: 10)
-        timePicker.hidden = false
-        timerLabel.hidden = true
-        startTimerButton.hidden = false
-        stopTimerButton.hidden = true
-        intitialTimeLabel.hidden = true
+        timePicker?.hidden = false
+        timerLabel?.hidden = true
+        startTimerButton?.hidden = false
+        stopTimerButton?.hidden = true
+        intitialTimeLabel?.hidden = true
         timeLabelUpdated = false
         
         self.secondCounter = 0
@@ -115,13 +124,15 @@ class ViewController: UIViewController {
         self.countDownTimer.invalidate()
         self.progressViewAnimationTimer.invalidate()
         startProgressAnimation()
-        view.bringSubviewToFront(timePicker)
+        view.bringSubviewToFront(timePicker!)
+        bellSound.stop()
     }
     
     @IBAction func startTimer(sender : AnyObject) {
+        
         UILabel.appearance().font = UIFont(name: font, size: 50)
         println(self.initialDate)
-        duration = Int(self.timePicker.countDownDuration)
+        duration = Int((self.timePicker?.countDownDuration)!)
         
         progressTicks = (1/(Double(duration))) * 0.05
         println(progressTicks)
@@ -138,11 +149,11 @@ class ViewController: UIViewController {
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
         
-        timePicker.hidden = true
-        timerLabel.hidden = false
-        startTimerButton.hidden = true
-        stopTimerButton.hidden = false
-        intitialTimeLabel.hidden = false
+        timePicker?.hidden = true
+        timerLabel?.hidden = false
+        startTimerButton?.hidden = true
+        stopTimerButton?.hidden = false
+        intitialTimeLabel?.hidden = false
         print (duration)
         println (hourCounter)
         updateTimeLabel()
@@ -152,16 +163,16 @@ class ViewController: UIViewController {
     
     func startProgressAnimation () {
         progressView.hidden = false
-        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 35, y: (timePicker.bounds.height) / 2, width: 250, height: 250)
+        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 35, y: (timePicker?.bounds.height)! / 2, width: 250, height: 250)
         progressView = DACircularProgressView(frame: progressFrame)
         progressView.trackTintColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
         progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
         self.view.addSubview(progressView)
-        view.bringSubviewToFront(stopTimerButton)
+        view.bringSubviewToFront(stopTimerButton!)
     }
     
     func animateProgressView () {
-        progressView.progress += progressTicks
+        progressView.progress += CGFloat(progressTicks)
     }
     
     //Mark - 🕑

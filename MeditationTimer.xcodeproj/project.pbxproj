@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D88198941CF00B92D70 /* DACircularProgressView.m */; };
 		BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */; };
+		BB3DF8871992EB8D00DB688A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */; };
+		BB9E5674198D5B1100B31E12 /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB9E5673198D5B1100B31E12 /* Bell.wav */; };
+		BB9E5676198D5B9D00B31E12 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */; };
 		BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */; };
+		BBC92D01198AD72100B4A4F0 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC92D00198AD72100B4A4F0 /* AlertsViewController.swift */; };
 		BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B55E19845C8000827C43 /* AppDelegate.swift */; };
 		BBE2B56119845C8000827C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B56019845C8000827C43 /* ViewController.swift */; };
 		BBE2B56419845C8000827C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56219845C8000827C43 /* Main.storyboard */; };
@@ -34,7 +38,11 @@
 		BB389D88198941CF00B92D70 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		BB389D89198941CF00B92D70 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BB9E5673198D5B1100B31E12 /* Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bell.wav; sourceTree = "<group>"; };
+		BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg_it.otf; path = ../../../../../Downloads/Brandon_reg_it.otf; sourceTree = "<group>"; };
+		BBC92D00198AD72100B4A4F0 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		BBE2B55919845C8000827C43 /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B55D19845C8000827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B55E19845C8000827C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3DF8871992EB8D00DB688A /* AudioToolbox.framework in Frameworks */,
+				BB9E5676198D5B9D00B31E12 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,7 @@
 				BBE2B55E19845C8000827C43 /* AppDelegate.swift */,
 				BBE2B56019845C8000827C43 /* ViewController.swift */,
 				BBE2B56219845C8000827C43 /* Main.storyboard */,
+				BBC92D00198AD72100B4A4F0 /* AlertsViewController.swift */,
 				BBE2B56519845C8000827C43 /* Images.xcassets */,
 				BB389D85198941BF00B92D70 /* Open Source */,
 				BBE2B55C19845C8000827C43 /* Supporting Files */,
@@ -111,6 +122,9 @@
 		BBE2B55C19845C8000827C43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */,
+				BB9E5673198D5B1100B31E12 /* Bell.wav */,
+				BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */,
 				BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */,
 				BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */,
 				BBE2B55D19845C8000827C43 /* Info.plist */,
@@ -218,6 +232,7 @@
 				BBE2B56419845C8000827C43 /* Main.storyboard in Resources */,
 				BBE2B56619845C8000827C43 /* Images.xcassets in Resources */,
 				BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */,
+				BB9E5674198D5B1100B31E12 /* Bell.wav in Resources */,
 				BBFCB40C1986FE1A002BD8EA /* Brandon_reg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +253,7 @@
 			files = (
 				BBE2B56119845C8000827C43 /* ViewController.swift in Sources */,
 				BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */,
+				BBC92D01198AD72100B4A4F0 /* AlertsViewController.swift in Sources */,
 				BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */,
 				BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */,
 			);
