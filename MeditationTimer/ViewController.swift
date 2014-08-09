@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+
 class ViewController: UIViewController {
     @IBOutlet var timePicker : UIDatePicker?
     @IBOutlet var startTimerButton : UIButton?
@@ -47,8 +48,8 @@ class ViewController: UIViewController {
         startProgressAnimation()
         startTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
         stopTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
-        
         timerLabel?.font = UIFont(name: font, size: 20)
+        intitialTimeLabel?.font = UIFont(name: font, size: 20)
         view.bringSubviewToFront(timePicker!)
         self.initialDate    = NSDate()
         
@@ -65,7 +66,7 @@ class ViewController: UIViewController {
     func updateTimeLabel() {
         
         if (secondCounter == 0 || secondCounter < 10)  {
-            timerLabel?.text = String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+            timerLabel?.text = String(Int(minuteCounter)) + ":0" + String(secondCounter)
         } else {
             if (hourCounter == 0){
                 timerLabel?.text = String(Int(minuteCounter)) + ":" + String(secondCounter)
@@ -83,7 +84,7 @@ class ViewController: UIViewController {
         else if (hourCounter > 0) {
             println("Hourcounter is greater than zero")
             if (secondCounter == 0 || secondCounter < 10)  {
-                timerLabel?.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter) + "0"
+                timerLabel?.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter))  + ":0" + String(secondCounter)
             } else {
                 timerLabel?.text = "0" + String(Int(hourCounter)) + ":" + String(Int(minuteCounter)) + ":" + String(secondCounter)
             }
@@ -111,12 +112,7 @@ class ViewController: UIViewController {
     
     @IBAction func stopTimer(sender : AnyObject) {
         UILabel.appearance().font = UIFont(name: font, size: 10)
-        timePicker?.hidden = false
-        timerLabel?.hidden = true
-        startTimerButton?.hidden = false
-        stopTimerButton?.hidden = true
-        intitialTimeLabel?.hidden = true
-        timeLabelUpdated = false
+        swapToInitialView()
         
         self.secondCounter = 0
         self.minuteCounter = 60
@@ -149,11 +145,8 @@ class ViewController: UIViewController {
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
         
-        timePicker?.hidden = true
-        timerLabel?.hidden = false
-        startTimerButton?.hidden = true
-        stopTimerButton?.hidden = false
-        intitialTimeLabel?.hidden = false
+        swapToCountdownView()
+        
         print (duration)
         println (hourCounter)
         updateTimeLabel()
@@ -163,7 +156,7 @@ class ViewController: UIViewController {
     
     func startProgressAnimation () {
         progressView.hidden = false
-        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 35, y: (timePicker?.bounds.height)! / 2, width: 250, height: 250)
+        var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 33, y: (timePicker?.bounds.height)! / 2, width: 250, height: 250)
         progressView = DACircularProgressView(frame: progressFrame)
         progressView.trackTintColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
         progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
@@ -173,6 +166,35 @@ class ViewController: UIViewController {
     
     func animateProgressView () {
         progressView.progress += CGFloat(progressTicks)
+    }
+    
+    //Mark - Swapping views
+    
+    func swapToInitialView () {
+        timePicker?.hidden = false
+        timerLabel?.hidden = true
+        startTimerButton?.hidden = false
+        stopTimerButton?.hidden = true
+        intitialTimeLabel?.hidden = true
+        timeLabelUpdated = false
+    }
+    
+    func swapToCountdownView () {
+        timePicker?.hidden = true
+        timerLabel?.hidden = false
+        startTimerButton?.hidden = true
+        stopTimerButton?.hidden = false
+        intitialTimeLabel?.hidden = false
+    }
+    
+    func swapToPauseView () {
+        
+    }
+    
+    func swapToFinishedView () {
+        let quote = Quote()
+        let quoteOfTheDay = quote.dailyQuote()
+        
     }
     
     //Mark - 🕑
