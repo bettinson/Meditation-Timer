@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0FA6521999268600AD7C00 /* White space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA6511999268600AD7C00 /* White space.jpg */; };
 		BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D88198941CF00B92D70 /* DACircularProgressView.m */; };
 		BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */; };
 		BB3DF8871992EB8D00DB688A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB0FA6511999268600AD7C00 /* White space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "White space.jpg"; sourceTree = "<group>"; };
 		BB389D86198941CF00B92D70 /* MeditationTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeditationTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB389D87198941CF00B92D70 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
 		BB389D88198941CF00B92D70 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		BBD740501996A2F6006CF8F0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BB0FA6511999268600AD7C00 /* White space.jpg */,
 				BBD740551996E5A1006CF8F0 /* Play@2x.png */,
 				BBD740511996A312006CF8F0 /* begin@2x.png */,
 			);
@@ -250,6 +253,7 @@
 				BBE2B56419845C8000827C43 /* Main.storyboard in Resources */,
 				BBE2B56619845C8000827C43 /* Images.xcassets in Resources */,
 				BBD740561996E5A1006CF8F0 /* Play@2x.png in Resources */,
+				BB0FA6521999268600AD7C00 /* White space.jpg in Resources */,
 				BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */,
 				BB9E5674198D5B1100B31E12 /* Bell.wav in Resources */,
 				BBD740521996A312006CF8F0 /* begin@2x.png in Resources */,

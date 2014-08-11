@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var intitialTimeLabel : UILabel?
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var whiteSpaceBlocker: UIButton!
     
     var progressView: DACircularProgressView = DACircularProgressView()
     
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
     var initialDate : NSDate = NSDate()
     var duration       = 0
     var defaultBellSound : NSURL  = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("Bell", ofType: "wav"))
+    
+    var gestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer()
     
     var bellSound = AVAudioPlayer()
 
@@ -45,7 +48,10 @@ class ViewController: UIViewController {
     
     var progressTicks : Double = 0
     
+
     override func viewDidLoad() {
+        
+        gestureRecognizer = UITapGestureRecognizer(target: self, action: "swapTimer")
         bellSound = AVAudioPlayer(contentsOfURL: defaultBellSound, error: nil)
         progressView.progressTintColor = UIColor.clearColor()
         super.viewDidLoad()
@@ -55,6 +61,8 @@ class ViewController: UIViewController {
         timerLabel?.font = UIFont(name: font, size: 20)
         intitialTimeLabel?.font = UIFont(name: font, size: 20)
         view.bringSubviewToFront(timePicker!)
+        view.bringSubviewToFront(whiteSpaceBlocker!)
+        view.bringSubviewToFront(progressView)
         self.initialDate    = NSDate()
         
         // Default is 20 minutes
@@ -116,6 +124,7 @@ class ViewController: UIViewController {
     // Mark Buttons
     
     @IBAction func stopTimer(sender : AnyObject) {
+        progressView.removeGestureRecognizer(gestureRecognizer)
         UILabel.appearance().font = UIFont(name: font, size: 10)
         
         progressView.progressTintColor = UIColor.clearColor()
@@ -123,6 +132,8 @@ class ViewController: UIViewController {
         totalSecondsElapsed = 0
         progressView.progress = 0
         view.bringSubviewToFront(timePicker!)
+        view.bringSubviewToFront(whiteSpaceBlocker!)
+        view.bringSubviewToFront(progressView)
         swapToInitialView()
         resumeButton.hidden = true
         bellSound.stop()
@@ -167,6 +178,8 @@ class ViewController: UIViewController {
         UILabel.appearance().font = UIFont(name: font, size: 50)
         println(self.initialDate)
         duration = Int((self.timePicker?.countDownDuration)!)
+       
+        
         
         progressTicks = (1/(Double(duration))) * 0.05
         println(progressTicks)
@@ -202,10 +215,8 @@ class ViewController: UIViewController {
         progressView.trackTintColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
         progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
         self.view.addSubview(progressView)
-        var gestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "swapTimer")
         gestureRecognizer.cancelsTouchesInView = false
         progressView.addGestureRecognizer(gestureRecognizer)
-
         view.bringSubviewToFront(stopTimerButton!)
     }
     
