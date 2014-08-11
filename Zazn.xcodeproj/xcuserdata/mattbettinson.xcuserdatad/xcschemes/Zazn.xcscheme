@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BBE2B55819845C8000827C43"
-               BuildableName = "MeditationTimer.app"
-               BlueprintName = "MeditationTimer"
-               ReferencedContainer = "container:MeditationTimer.xcodeproj">
+               BuildableName = "Zazn.app"
+               BlueprintName = "Zazn"
+               ReferencedContainer = "container:Zazn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BBE2B56A19845C8100827C43"
-               BuildableName = "MeditationTimerTests.xctest"
-               BlueprintName = "MeditationTimerTests"
-               ReferencedContainer = "container:MeditationTimer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBE2B55819845C8000827C43"
-            BuildableName = "MeditationTimer.app"
-            BlueprintName = "MeditationTimer"
-            ReferencedContainer = "container:MeditationTimer.xcodeproj">
+            BuildableName = "Zazn.app"
+            BlueprintName = "Zazn"
+            ReferencedContainer = "container:Zazn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBE2B55819845C8000827C43"
-            BuildableName = "MeditationTimer.app"
-            BlueprintName = "MeditationTimer"
-            ReferencedContainer = "container:MeditationTimer.xcodeproj">
+            BuildableName = "Zazn.app"
+            BlueprintName = "Zazn"
+            ReferencedContainer = "container:Zazn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBE2B55819845C8000827C43"
-            BuildableName = "MeditationTimer.app"
-            BlueprintName = "MeditationTimer"
-            ReferencedContainer = "container:MeditationTimer.xcodeproj">
+            BuildableName = "Zazn.app"
+            BlueprintName = "Zazn"
+            ReferencedContainer = "container:Zazn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

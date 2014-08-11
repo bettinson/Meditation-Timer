@@ -51,13 +51,13 @@
 		BBD740511996A312006CF8F0 /* begin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "begin@2x.png"; path = "../../../../../Desktop/begin@2x.png"; sourceTree = "<group>"; };
 		BBD740531996D83B006CF8F0 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		BBD740551996E5A1006CF8F0 /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play@2x.png"; path = "../../../../../Desktop/Play@2x.png"; sourceTree = "<group>"; };
-		BBE2B55919845C8000827C43 /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE2B55919845C8000827C43 /* Zazn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zazn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B55D19845C8000827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B55E19845C8000827C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE2B56019845C8000827C43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBE2B56319845C8000827C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBE2B56519845C8000827C43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE2B56B19845C8100827C43 /* ZaznTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaznTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B57019845C8100827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimerTests.swift; sourceTree = "<group>"; };
 		BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg.otf; path = ../../../../../Downloads/Brandon_reg.otf; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		BBE2B55019845C8000827C43 = {
 			isa = PBXGroup;
 			children = (
-				BBE2B55B19845C8000827C43 /* MeditationTimer */,
-				BBE2B56E19845C8100827C43 /* MeditationTimerTests */,
+				BBE2B55B19845C8000827C43 /* Zazn */,
+				BBE2B56E19845C8100827C43 /* ZaznTests */,
 				BBE2B55A19845C8000827C43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,13 +117,13 @@
 		BBE2B55A19845C8000827C43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBE2B55919845C8000827C43 /* MeditationTimer.app */,
-				BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */,
+				BBE2B55919845C8000827C43 /* Zazn.app */,
+				BBE2B56B19845C8100827C43 /* ZaznTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBE2B55B19845C8000827C43 /* MeditationTimer */ = {
+		BBE2B55B19845C8000827C43 /* Zazn */ = {
 			isa = PBXGroup;
 			children = (
 				BBE2B55E19845C8000827C43 /* AppDelegate.swift */,
@@ -136,6 +136,7 @@
 				BBE2B55C19845C8000827C43 /* Supporting Files */,
 				BBD740501996A2F6006CF8F0 /* Assets */,
 			);
+			name = Zazn;
 			path = MeditationTimer;
 			sourceTree = "<group>";
 		};
@@ -152,12 +153,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BBE2B56E19845C8100827C43 /* MeditationTimerTests */ = {
+		BBE2B56E19845C8100827C43 /* ZaznTests */ = {
 			isa = PBXGroup;
 			children = (
 				BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */,
 				BBE2B56F19845C8100827C43 /* Supporting Files */,
 			);
+			name = ZaznTests;
 			path = MeditationTimerTests;
 			sourceTree = "<group>";
 		};
@@ -172,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBE2B55819845C8000827C43 /* MeditationTimer */ = {
+		BBE2B55819845C8000827C43 /* Zazn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimer" */;
+			buildConfigurationList = BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "Zazn" */;
 			buildPhases = (
 				BBE2B55519845C8000827C43 /* Sources */,
 				BBE2B55619845C8000827C43 /* Frameworks */,
@@ -184,14 +186,14 @@
 			);
 			dependencies = (
 			);
-			name = MeditationTimer;
+			name = Zazn;
 			productName = MeditationTimer;
-			productReference = BBE2B55919845C8000827C43 /* MeditationTimer.app */;
+			productReference = BBE2B55919845C8000827C43 /* Zazn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BBE2B56A19845C8100827C43 /* MeditationTimerTests */ = {
+		BBE2B56A19845C8100827C43 /* ZaznTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimerTests" */;
+			buildConfigurationList = BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "ZaznTests" */;
 			buildPhases = (
 				BBE2B56719845C8100827C43 /* Sources */,
 				BBE2B56819845C8100827C43 /* Frameworks */,
@@ -202,9 +204,9 @@
 			dependencies = (
 				BBE2B56D19845C8100827C43 /* PBXTargetDependency */,
 			);
-			name = MeditationTimerTests;
+			name = ZaznTests;
 			productName = MeditationTimerTests;
-			productReference = BBE2B56B19845C8100827C43 /* MeditationTimerTests.xctest */;
+			productReference = BBE2B56B19845C8100827C43 /* ZaznTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "MeditationTimer" */;
+			buildConfigurationList = BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "Zazn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -239,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBE2B55819845C8000827C43 /* MeditationTimer */,
-				BBE2B56A19845C8100827C43 /* MeditationTimerTests */,
+				BBE2B55819845C8000827C43 /* Zazn */,
+				BBE2B56A19845C8100827C43 /* ZaznTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,7 +299,7 @@
 /* Begin PBXTargetDependency section */
 		BBE2B56D19845C8100827C43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BBE2B55819845C8000827C43 /* MeditationTimer */;
+			target = BBE2B55819845C8000827C43 /* Zazn */;
 			targetProxy = BBE2B56C19845C8100827C43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -404,7 +406,7 @@
 					"$(inherited)",
 					/Users/mattbettinson/Downloads/TestFlightSDK3,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zazn;
 				SWIFT_OBJC_BRIDGING_HEADER = "MeditationTimer/MeditationTimer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -423,7 +425,7 @@
 					"$(inherited)",
 					/Users/mattbettinson/Downloads/TestFlightSDK3,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zazn;
 				SWIFT_OBJC_BRIDGING_HEADER = "MeditationTimer/MeditationTimer-Bridging-Header.h";
 			};
 			name = Release;
@@ -443,7 +445,7 @@
 				INFOPLIST_FILE = MeditationTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZaznTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -459,7 +461,7 @@
 				INFOPLIST_FILE = MeditationTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZaznTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -467,7 +469,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "MeditationTimer" */ = {
+		BBE2B55419845C8000827C43 /* Build configuration list for PBXProject "Zazn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBE2B57319845C8100827C43 /* Debug */,
@@ -476,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimer" */ = {
+		BBE2B57519845C8100827C43 /* Build configuration list for PBXNativeTarget "Zazn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBE2B57619845C8100827C43 /* Debug */,
@@ -485,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "MeditationTimerTests" */ = {
+		BBE2B57819845C8100827C43 /* Build configuration list for PBXNativeTarget "ZaznTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBE2B57919845C8100827C43 /* Debug */,
