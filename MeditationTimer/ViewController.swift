@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var timerLabel : UILabel?
     @IBOutlet var stopTimerButton : UIButton?
     @IBOutlet var intitialTimeLabel : UILabel?
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var resumeButton: UIButton!
     
     var progressView: DACircularProgressView = DACircularProgressView()
     
@@ -37,13 +39,15 @@ class ViewController: UIViewController {
     var countDownTimer : NSTimer = NSTimer()
     var progressViewAnimationTimer : NSTimer = NSTimer()
     
+    var timerIsRunning = false
+    
     var timeLabelUpdated : Bool = false
     
     var progressTicks : Double = 0
     
     override func viewDidLoad() {
         bellSound = AVAudioPlayer(contentsOfURL: defaultBellSound, error: nil)
-        
+        progressView.progressTintColor = UIColor.clearColor()
         super.viewDidLoad()
         startProgressAnimation()
         startTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
@@ -91,41 +95,75 @@ class ViewController: UIViewController {
         }
         if (!timeLabelUpdated) {
             intitialTimeLabel?.text = timerLabel?.text
+            //For the initial greyed out time
             timeLabelUpdated = true
         }
     }
     
     func timerIsDone() -> Bool {
-        if (duration <= totalSecondsElapsed){
+        if (duration == totalSecondsElapsed){
             timeLabelUpdated = false
             bellSound.prepareToPlay()
             bellSound.play()
+            timerIsRunning = false
             return true
         }
-        else if (duration >= totalSecondsElapsed) {
+        else {
             return false
         }
-        return false
     }
     
     // Mark Buttons
     
     @IBAction func stopTimer(sender : AnyObject) {
         UILabel.appearance().font = UIFont(name: font, size: 10)
-        swapToInitialView()
         
-        self.secondCounter = 0
-        self.minuteCounter = 60
-        self.hourCounter = 24
-        self.countDownTimer.invalidate()
-        self.progressViewAnimationTimer.invalidate()
-        startProgressAnimation()
+        progressView.progressTintColor = UIColor.clearColor()
+
+        totalSecondsElapsed = 0
+        progressView.progress = 0
         view.bringSubviewToFront(timePicker!)
+        swapToInitialView()
+        resumeButton.hidden = true
         bellSound.stop()
+        countDownTimer.invalidate()
+        progressViewAnimationTimer.invalidate()
+        timerIsRunning = false
+    }
+    
+    func swapTimer() {
+        if (timerIsRunning) {
+            resumeButton.hidden = false
+            view.bringSubviewToFront(resumeButton)
+            countDownTimer.invalidate()
+            progressViewAnimationTimer.invalidate()
+
+            timerLabel?.hidden = true
+            timerIsRunning = false
+        } else {
+            resumeButton.hidden = true
+            timerIsRunning = true
+            timerLabel?.hidden = false
+            countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
+            progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
+            resumeButton.hidden = true
+        }
+    }
+    
+    func pauseAndResumeTimer() {
+        swapTimer()
+    }
+    
+    @IBAction func resumeTimer(sender: AnyObject) {
+        pauseAndResumeTimer()
     }
     
     @IBAction func startTimer(sender : AnyObject) {
-        
+        secondCounter       = 0
+        minuteCounter       = 60
+        hourCounter         = 24
+        totalSecondsElapsed = 0
+        timerIsRunning = true
         UILabel.appearance().font = UIFont(name: font, size: 50)
         println(self.initialDate)
         duration = Int((self.timePicker?.countDownDuration)!)
@@ -144,7 +182,9 @@ class ViewController: UIViewController {
         
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
         progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
-        
+        view.bringSubviewToFront(timerLabel!)
+        view.bringSubviewToFront(intitialTimeLabel!)
+        startProgressAnimation()
         swapToCountdownView()
         
         print (duration)
@@ -156,11 +196,16 @@ class ViewController: UIViewController {
     
     func startProgressAnimation () {
         progressView.hidden = false
+        
         var progressFrame : CGRect = CGRect(x: self.view.center.x - (self.view.bounds.width / 2) + 33, y: (timePicker?.bounds.height)! / 2, width: 250, height: 250)
         progressView = DACircularProgressView(frame: progressFrame)
         progressView.trackTintColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
         progressView.progressTintColor = UIColor(red: 82/255.0, green: 161/255.0, blue: 225/255.0, alpha: 1)
         self.view.addSubview(progressView)
+        var gestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "swapTimer")
+        gestureRecognizer.cancelsTouchesInView = false
+        progressView.addGestureRecognizer(gestureRecognizer)
+
         view.bringSubviewToFront(stopTimerButton!)
     }
     
@@ -171,6 +216,7 @@ class ViewController: UIViewController {
     //Mark - Swapping views
     
     func swapToInitialView () {
+        view.bringSubviewToFront(pauseButton!)
         timePicker?.hidden = false
         timerLabel?.hidden = true
         startTimerButton?.hidden = false
@@ -240,5 +286,13 @@ class ViewController: UIViewController {
         self.minuteCounter = 60
 
     }
+    //Mark - UI Misc
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
 }
+
+
+
 

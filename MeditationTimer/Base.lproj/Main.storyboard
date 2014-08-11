@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
@@ -23,12 +22,6 @@
                                     <!--2014-07-26 22:01:42 +0000-->
                                 </date>
                             </datePicker>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-kE-4yk">
-                                <rect key="frame" x="50" y="169" width="220" height="82"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-fH-FfZ">
                                 <rect key="frame" x="115" y="34" width="90" height="32"/>
                             </imageView>
@@ -56,6 +49,28 @@
                                     <action selector="stopTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9lZ-30-GWt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewy-US-AVV">
+                                <rect key="frame" x="13" y="389" width="241" height="185"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vs3-fv-LaW">
+                                <rect key="frame" x="147" y="189" width="29" height="42"/>
+                                <state key="normal" title="Resume" image="Play.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resumeTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hTh-u9-3Y0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzp-af-590">
+                                <rect key="frame" x="68" y="199" width="186" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -68,10 +83,12 @@
                     </simulatedScreenMetrics>
                     <connections>
                         <outlet property="intitialTimeLabel" destination="fw7-9p-F1N" id="uFn-Qd-aEI"/>
+                        <outlet property="pauseButton" destination="ewy-US-AVV" id="rT3-rp-xQM"/>
+                        <outlet property="resumeButton" destination="vs3-fv-LaW" id="k2d-dm-THC"/>
                         <outlet property="startTimerButton" destination="ImO-ks-BMg" id="9kX-OV-xNf"/>
                         <outlet property="stopTimerButton" destination="GHA-Tn-gUe" id="L2M-4k-1nv"/>
                         <outlet property="timePicker" destination="TdP-T8-dOX" id="DKD-Be-LBa"/>
-                        <outlet property="timerLabel" destination="Xc9-kE-4yk" id="nwX-A7-3J9"/>
+                        <outlet property="timerLabel" destination="Jzp-af-590" id="F3v-Lf-yDG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -81,6 +98,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="96" height="30"/>
+        <image name="Play.png" width="32" height="41"/>
         <image name="begin.png" width="101" height="42"/>
     </resources>
 </document>
