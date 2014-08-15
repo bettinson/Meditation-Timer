@@ -10,20 +10,24 @@
 		BB0FA6521999268600AD7C00 /* White space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA6511999268600AD7C00 /* White space.jpg */; };
 		BB389D8B198941CF00B92D70 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D88198941CF00B92D70 /* DACircularProgressView.m */; };
 		BB389D8C198941CF00B92D70 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */; };
-		BB3DF8871992EB8D00DB688A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */; };
+		BB5D688D1999409300FF4EFA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */; };
+		BB5D68901999413C00FF4EFA /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D688E1999413C00FF4EFA /* Play@2x.png */; };
+		BB5D68911999413C00FF4EFA /* begin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D688F1999413C00FF4EFA /* begin@2x.png */; };
+		BB5D68941999418C00FF4EFA /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5D68921999418C00FF4EFA /* Brandon_reg_it.otf */; };
+		BB5D68961999423600FF4EFA /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5D68951999423600FF4EFA /* Brandon_reg.otf */; };
+		BB5D68981999426A00FF4EFA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D68971999426A00FF4EFA /* AppIcon.png */; };
+		BB5D68991999426A00FF4EFA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5D68971999426A00FF4EFA /* AppIcon.png */; };
+		BB5D689B199942CC00FF4EFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5D689A199942CC00FF4EFA /* Images.xcassets */; };
 		BB9E5674198D5B1100B31E12 /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB9E5673198D5B1100B31E12 /* Bell.wav */; };
-		BB9E5676198D5B9D00B31E12 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */; };
-		BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */; };
 		BBC92D01198AD72100B4A4F0 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC92D00198AD72100B4A4F0 /* AlertsViewController.swift */; };
-		BBD740521996A312006CF8F0 /* begin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD740511996A312006CF8F0 /* begin@2x.png */; };
+		BBCB14AD199E862300C00ADB /* meditateAgain @2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCB14AC199E862300C00ADB /* meditateAgain @2x.png */; };
+		BBCB14AF199E882A00C00ADB /* tweetQuote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCB14AE199E882A00C00ADB /* tweetQuote@2x.png */; };
 		BBD740541996D83B006CF8F0 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD740531996D83B006CF8F0 /* Quote.swift */; };
-		BBD740561996E5A1006CF8F0 /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD740551996E5A1006CF8F0 /* Play@2x.png */; };
 		BBE2B55F19845C8000827C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B55E19845C8000827C43 /* AppDelegate.swift */; };
 		BBE2B56119845C8000827C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B56019845C8000827C43 /* ViewController.swift */; };
 		BBE2B56419845C8000827C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56219845C8000827C43 /* Main.storyboard */; };
 		BBE2B56619845C8000827C43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE2B56519845C8000827C43 /* Images.xcassets */; };
 		BBE2B57219845C8100827C43 /* MeditationTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B57119845C8100827C43 /* MeditationTimerTests.swift */; };
-		BBFCB40C1986FE1A002BD8EA /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBFCB40B1986FE1A002BD8EA /* Brandon_reg.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +48,20 @@
 		BB389D89198941CF00B92D70 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		BB389D8A198941CF00B92D70 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
 		BB3DF8861992EB8D00DB688A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BB5D688E1999413C00FF4EFA /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		BB5D688F1999413C00FF4EFA /* begin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "begin@2x.png"; sourceTree = "<group>"; };
+		BB5D68921999418C00FF4EFA /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg_it.otf; sourceTree = "<group>"; };
+		BB5D68951999423600FF4EFA /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg.otf; path = ../Brandon_reg.otf; sourceTree = "<group>"; };
+		BB5D68971999426A00FF4EFA /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		BB5D689A199942CC00FF4EFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Zazn/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		BB9E5673198D5B1100B31E12 /* Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bell.wav; sourceTree = "<group>"; };
 		BB9E5675198D5B9D00B31E12 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BBB26740199934270026D126 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBC363EA198701C60054AA3F /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_reg_it.otf; path = ../../../../../Downloads/Brandon_reg_it.otf; sourceTree = "<group>"; };
 		BBC92D00198AD72100B4A4F0 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
-		BBD740511996A312006CF8F0 /* begin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "begin@2x.png"; path = "../../../../../Desktop/begin@2x.png"; sourceTree = "<group>"; };
+		BBCB14AC199E862300C00ADB /* meditateAgain @2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meditateAgain @2x.png"; sourceTree = "<group>"; };
+		BBCB14AE199E882A00C00ADB /* tweetQuote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweetQuote@2x.png"; sourceTree = "<group>"; };
 		BBD740531996D83B006CF8F0 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		BBD740551996E5A1006CF8F0 /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play@2x.png"; path = "../../../../../Desktop/Play@2x.png"; sourceTree = "<group>"; };
 		BBE2B55919845C8000827C43 /* Zazn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zazn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE2B55D19845C8000827C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE2B55E19845C8000827C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,8 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3DF8871992EB8D00DB688A /* AudioToolbox.framework in Frameworks */,
-				BB9E5676198D5B9D00B31E12 /* AVFoundation.framework in Frameworks */,
+				BB5D688D1999409300FF4EFA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +108,14 @@
 		BBD740501996A2F6006CF8F0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BBCB14AC199E862300C00ADB /* meditateAgain @2x.png */,
+				BB5D68971999426A00FF4EFA /* AppIcon.png */,
+				BB5D68951999423600FF4EFA /* Brandon_reg.otf */,
 				BB0FA6511999268600AD7C00 /* White space.jpg */,
-				BBD740551996E5A1006CF8F0 /* Play@2x.png */,
-				BBD740511996A312006CF8F0 /* begin@2x.png */,
+				BB5D688E1999413C00FF4EFA /* Play@2x.png */,
+				BB5D688F1999413C00FF4EFA /* begin@2x.png */,
+				BB5D68921999418C00FF4EFA /* Brandon_reg_it.otf */,
+				BBCB14AE199E882A00C00ADB /* tweetQuote@2x.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -108,6 +123,7 @@
 		BBE2B55019845C8000827C43 = {
 			isa = PBXGroup;
 			children = (
+				BBB26740199934270026D126 /* Foundation.framework */,
 				BBE2B55B19845C8000827C43 /* Zazn */,
 				BBE2B56E19845C8100827C43 /* ZaznTests */,
 				BBE2B55A19845C8000827C43 /* Products */,
@@ -135,6 +151,7 @@
 				BB389D85198941BF00B92D70 /* Open Source */,
 				BBE2B55C19845C8000827C43 /* Supporting Files */,
 				BBD740501996A2F6006CF8F0 /* Assets */,
+				BB5D689A199942CC00FF4EFA /* Images.xcassets */,
 			);
 			name = Zazn;
 			path = MeditationTimer;
@@ -252,14 +269,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5D689B199942CC00FF4EFA /* Images.xcassets in Resources */,
 				BBE2B56419845C8000827C43 /* Main.storyboard in Resources */,
 				BBE2B56619845C8000827C43 /* Images.xcassets in Resources */,
-				BBD740561996E5A1006CF8F0 /* Play@2x.png in Resources */,
 				BB0FA6521999268600AD7C00 /* White space.jpg in Resources */,
-				BBC363EB198701C60054AA3F /* Brandon_reg_it.otf in Resources */,
+				BB5D68901999413C00FF4EFA /* Play@2x.png in Resources */,
+				BB5D68911999413C00FF4EFA /* begin@2x.png in Resources */,
 				BB9E5674198D5B1100B31E12 /* Bell.wav in Resources */,
-				BBD740521996A312006CF8F0 /* begin@2x.png in Resources */,
-				BBFCB40C1986FE1A002BD8EA /* Brandon_reg.otf in Resources */,
+				BBCB14AD199E862300C00ADB /* meditateAgain @2x.png in Resources */,
+				BB5D68981999426A00FF4EFA /* AppIcon.png in Resources */,
+				BBCB14AF199E882A00C00ADB /* tweetQuote@2x.png in Resources */,
+				BB5D68961999423600FF4EFA /* Brandon_reg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +287,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5D68991999426A00FF4EFA /* AppIcon.png in Resources */,
+				BB5D68941999418C00FF4EFA /* Brandon_reg_it.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

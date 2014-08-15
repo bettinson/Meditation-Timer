@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Zazn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -23,9 +23,6 @@
                                     <!--2014-07-26 22:01:42 +0000-->
                                 </date>
                             </datePicker>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-fH-FfZ">
-                                <rect key="frame" x="115" y="34" width="90" height="32"/>
-                            </imageView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw7-9p-F1N">
                                 <rect key="frame" x="68" y="128" width="186" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,7 +30,7 @@
                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-ks-BMg">
-                                <rect key="frame" x="110" y="350" width="100" height="42"/>
+                                <rect key="frame" x="110" y="366" width="100" height="42"/>
                                 <state key="normal" title="Begin Meditation" image="begin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,9 +38,9 @@
                                     <action selector="startTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ASU-mo-OJg"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-Tn-gUe">
-                                <rect key="frame" x="51" y="338" width="220" height="66"/>
-                                <state key="normal" title="Stop">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-Tn-gUe" userLabel="MeditateAgain">
+                                <rect key="frame" x="70" y="361" width="180" height="52"/>
+                                <state key="normal" title="Stop" image="meditateAgain .png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -73,11 +70,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efy-YB-vti">
-                                <rect key="frame" x="32" y="131" width="107" height="158"/>
+                                <rect key="frame" x="68" y="135" width="71" height="154"/>
                                 <state key="normal" image="White space.jpg" backgroundImage="White space.jpg">
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg3-Z5-1FJ">
+                                <rect key="frame" x="51" y="188" width="83" height="43"/>
+                                <state key="normal" image="White space.jpg" backgroundImage="White space.jpg">
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6g-xB-3QK">
+                                <rect key="frame" x="70" y="431" width="180" height="52"/>
+                                <state key="normal" title="Tweet" image="tweetQuote.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="iQw-g6-blY">
+                                <rect key="frame" x="68" y="135" width="186" height="180"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-fH-FfZ">
+                                <rect key="frame" x="115" y="34" width="90" height="32"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -90,13 +108,16 @@
                     </simulatedScreenMetrics>
                     <connections>
                         <outlet property="intitialTimeLabel" destination="fw7-9p-F1N" id="uFn-Qd-aEI"/>
+                        <outlet property="meditateAgainButton" destination="GHA-Tn-gUe" id="xPc-OX-cK5"/>
                         <outlet property="pauseButton" destination="ewy-US-AVV" id="rT3-rp-xQM"/>
+                        <outlet property="quoteLabel" destination="iQw-g6-blY" id="iTe-kG-oWn"/>
                         <outlet property="resumeButton" destination="vs3-fv-LaW" id="k2d-dm-THC"/>
                         <outlet property="startTimerButton" destination="ImO-ks-BMg" id="9kX-OV-xNf"/>
-                        <outlet property="stopTimerButton" destination="GHA-Tn-gUe" id="L2M-4k-1nv"/>
                         <outlet property="timePicker" destination="TdP-T8-dOX" id="DKD-Be-LBa"/>
                         <outlet property="timerLabel" destination="Jzp-af-590" id="F3v-Lf-yDG"/>
+                        <outlet property="tweetQuoteButton" destination="o6g-xB-3QK" id="u7g-UK-w88"/>
                         <outlet property="whiteSpaceBlocker" destination="efy-YB-vti" id="0QD-vY-UfG"/>
+                        <outlet property="whiteSpaceBlocker2" destination="yg3-Z5-1FJ" id="gNr-ef-4hw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -109,5 +130,7 @@
         <image name="Play.png" width="32" height="41"/>
         <image name="White space.jpg" width="100" height="100"/>
         <image name="begin.png" width="101" height="42"/>
+        <image name="meditateAgain .png" width="180" height="52"/>
+        <image name="tweetQuote.png" width="180" height="52"/>
     </resources>
 </document>

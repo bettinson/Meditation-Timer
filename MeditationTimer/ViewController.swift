@@ -14,13 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet var timePicker : UIDatePicker?
     @IBOutlet var startTimerButton : UIButton?
     @IBOutlet var timerLabel : UILabel?
-    @IBOutlet var stopTimerButton : UIButton?
+    @IBOutlet var meditateAgainButton: UIButton!
     @IBOutlet var intitialTimeLabel : UILabel?
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var whiteSpaceBlocker: UIButton!
+    @IBOutlet weak var whiteSpaceBlocker2: UIButton!
+    @IBOutlet weak var tweetQuoteButton: UIButton!
+    @IBOutlet weak var quoteLabel: UILabel!
     
     var progressView: DACircularProgressView = DACircularProgressView()
+    var userDefaults = NSUserDefaults()
     
     let time : NSDateComponents = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate:  NSDate())
     var startHour : Int = 0
@@ -50,19 +54,21 @@ class ViewController: UIViewController {
     
 
     override func viewDidLoad() {
-        
+//        userDefaults.
         gestureRecognizer = UITapGestureRecognizer(target: self, action: "swapTimer")
         bellSound = AVAudioPlayer(contentsOfURL: defaultBellSound, error: nil)
         progressView.progressTintColor = UIColor.clearColor()
         super.viewDidLoad()
         startProgressAnimation()
         startTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
-        stopTimerButton?.titleLabel.font = UIFont(name: font, size: 20)
         timerLabel?.font = UIFont(name: font, size: 20)
         intitialTimeLabel?.font = UIFont(name: font, size: 20)
+        view.bringSubviewToFront(progressView)
         view.bringSubviewToFront(timePicker!)
         view.bringSubviewToFront(whiteSpaceBlocker!)
-        view.bringSubviewToFront(progressView)
+        view.bringSubviewToFront(whiteSpaceBlocker2!)
+
+        
         self.initialDate    = NSDate()
         
         // Default is 20 minutes
@@ -131,9 +137,11 @@ class ViewController: UIViewController {
 
         totalSecondsElapsed = 0
         progressView.progress = 0
+        
+        view.bringSubviewToFront(progressView)
         view.bringSubviewToFront(timePicker!)
         view.bringSubviewToFront(whiteSpaceBlocker!)
-        view.bringSubviewToFront(progressView)
+        view.bringSubviewToFront(whiteSpaceBlocker2!)
         swapToInitialView()
         resumeButton.hidden = true
         bellSound.stop()
@@ -148,7 +156,7 @@ class ViewController: UIViewController {
             view.bringSubviewToFront(resumeButton)
             countDownTimer.invalidate()
             progressViewAnimationTimer.invalidate()
-
+            meditateAgainButton?.hidden = false
             timerLabel?.hidden = true
             timerIsRunning = false
         } else {
@@ -156,8 +164,10 @@ class ViewController: UIViewController {
             timerIsRunning = true
             timerLabel?.hidden = false
             countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
+            
             progressViewAnimationTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "animateProgressView", userInfo: nil, repeats: true)
             resumeButton.hidden = true
+            meditateAgainButton?.hidden = true
         }
     }
     
@@ -217,7 +227,7 @@ class ViewController: UIViewController {
         self.view.addSubview(progressView)
         gestureRecognizer.cancelsTouchesInView = false
         progressView.addGestureRecognizer(gestureRecognizer)
-        view.bringSubviewToFront(stopTimerButton!)
+        view.bringSubviewToFront(meditateAgainButton!)
     }
     
     func animateProgressView () {
@@ -227,31 +237,49 @@ class ViewController: UIViewController {
     //Mark - Swapping views
     
     func swapToInitialView () {
+        whiteSpaceBlocker.hidden = false
+        whiteSpaceBlocker2.hidden = false
+        progressView.hidden = false
+
         view.bringSubviewToFront(pauseButton!)
+        tweetQuoteButton?.hidden = true
+        quoteLabel.hidden = true
         timePicker?.hidden = false
         timerLabel?.hidden = true
         startTimerButton?.hidden = false
-        stopTimerButton?.hidden = true
+        meditateAgainButton?.hidden = true
         intitialTimeLabel?.hidden = true
         timeLabelUpdated = false
     }
     
     func swapToCountdownView () {
+        whiteSpaceBlocker.hidden = true
+        whiteSpaceBlocker2.hidden = true
         timePicker?.hidden = true
         timerLabel?.hidden = false
         startTimerButton?.hidden = true
-        stopTimerButton?.hidden = false
+        meditateAgainButton?.hidden = true
         intitialTimeLabel?.hidden = false
-    }
-    
-    func swapToPauseView () {
-        
     }
     
     func swapToFinishedView () {
         let quote = Quote()
         let quoteOfTheDay = quote.dailyQuote()
+        progressView.hidden = true
+        meditateAgainButton?.hidden = false
+        tweetQuoteButton?.hidden = false
+        quoteLabel.hidden = false
         
+        timePicker?.hidden = true
+        timerLabel?.hidden = true
+        startTimerButton?.hidden = true
+        whiteSpaceBlocker.hidden = true
+        whiteSpaceBlocker2.hidden = true
+        intitialTimeLabel?.hidden = true
+        timeLabelUpdated = false
+        quoteLabel?.font = UIFont(name: font, size: 17)
+
+        quoteLabel.text = quoteOfTheDay
     }
     
     //Mark - 🕑
@@ -269,6 +297,7 @@ class ViewController: UIViewController {
             self.secondCounter = 0
             self.minuteCounter = 60
             self.hourCounter = 24
+            swapToFinishedView()
         }
     }
     
@@ -301,6 +330,10 @@ class ViewController: UIViewController {
     
     override func shouldAutorotate() -> Bool {
         return false
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
 
