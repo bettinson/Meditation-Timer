@@ -120,6 +120,7 @@ class ViewController: UIViewController {
             bellSound.prepareToPlay()
             bellSound.play()
             timerIsRunning = false
+            progressView.removeFromSuperview()
             return true
         }
         else {
@@ -134,6 +135,7 @@ class ViewController: UIViewController {
         UILabel.appearance().font = UIFont(name: font, size: 10)
         
         progressView.progressTintColor = UIColor.clearColor()
+        progressView.removeFromSuperview()
 
         totalSecondsElapsed = 0
         progressView.progress = 0
@@ -179,6 +181,9 @@ class ViewController: UIViewController {
         pauseAndResumeTimer()
     }
     
+    @IBAction func endView(sender: AnyObject) {
+        swapToFinishedView()
+    }
     @IBAction func startTimer(sender : AnyObject) {
         secondCounter       = 0
         minuteCounter       = 60
@@ -237,11 +242,16 @@ class ViewController: UIViewController {
     //Mark - Swapping views
     
     func swapToInitialView () {
+        progressView.removeGestureRecognizer(gestureRecognizer)
         whiteSpaceBlocker.hidden = false
         whiteSpaceBlocker2.hidden = false
+        startProgressAnimation()
         progressView.hidden = false
 
-        view.bringSubviewToFront(pauseButton!)
+//        view.bringSubviewToFront(pauseButton!)
+        view.bringSubviewToFront(timePicker!)
+        view.bringSubviewToFront(whiteSpaceBlocker!)
+        view.bringSubviewToFront(whiteSpaceBlocker2!)
         tweetQuoteButton?.hidden = true
         quoteLabel.hidden = true
         timePicker?.hidden = false
@@ -253,6 +263,8 @@ class ViewController: UIViewController {
     }
     
     func swapToCountdownView () {
+        progressView.addGestureRecognizer(gestureRecognizer)
+
         whiteSpaceBlocker.hidden = true
         whiteSpaceBlocker2.hidden = true
         timePicker?.hidden = true
@@ -265,7 +277,8 @@ class ViewController: UIViewController {
     func swapToFinishedView () {
         let quote = Quote()
         let quoteOfTheDay = quote.dailyQuote()
-        progressView.hidden = true
+        progressView.removeGestureRecognizer(gestureRecognizer)
+        progressView.removeFromSuperview()
         meditateAgainButton?.hidden = false
         tweetQuoteButton?.hidden = false
         quoteLabel.hidden = false
@@ -298,6 +311,8 @@ class ViewController: UIViewController {
             self.minuteCounter = 60
             self.hourCounter = 24
             swapToFinishedView()
+            progressView.removeFromSuperview()
+
         }
     }
     
