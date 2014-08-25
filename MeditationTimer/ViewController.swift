@@ -85,13 +85,12 @@ class ViewController: UIViewController {
     
     // Called by the app delegate
     func updateView(let timeSpentLocked : Int) {
-        
         if (timerIsRunning) {
             totalSecondsElapsed = totalSecondsElapsed + timeSpentLocked
             if (timerIsDone()) {
                 swapToFinishedView()
             }
-            if (totalSecondsElapsed <= 0 || duration < totalSecondsElapsed) {
+            if (totalSecondsElapsed <= 0) {
                 swapToFinishedView()
             }
             println(timeSpentLocked)
