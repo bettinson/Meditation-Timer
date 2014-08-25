@@ -52,9 +52,11 @@ class ViewController: UIViewController {
     
     var progressTicks : Double = 0
     
-
     override func viewDidLoad() {
-//        userDefaults.
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        appDelegate.viewController = self
+        
         gestureRecognizer = UITapGestureRecognizer(target: self, action: "swapTimer")
         bellSound = AVAudioPlayer(contentsOfURL: defaultBellSound, error: nil)
         progressView.progressTintColor = UIColor.clearColor()
@@ -67,20 +69,42 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(timePicker!)
         view.bringSubviewToFront(whiteSpaceBlocker!)
         view.bringSubviewToFront(whiteSpaceBlocker2!)
-
         
         self.initialDate    = NSDate()
         
         // Default is 20 minutes
-        self.timePicker?.countDownDuration = 20 * 60
+        self.timePicker?.countDownDuration = 60
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+//        NSNotificationCenter.defaultCenter().removeObserver(self)
         // Dispose of any resources that can be recreated.
+//        let date: NSDate = NSNotificationCenter.defaultCenter().postNotificationName("GetTime", object: self)
     }
     
-
+    // Called by the app delegate
+    func updateView(let timeSpentLocked : Int) {
+        
+        if (timerIsRunning) {
+            totalSecondsElapsed = totalSecondsElapsed + timeSpentLocked
+            if (timerIsDone()) {
+                swapToFinishedView()
+            }
+            if (totalSecondsElapsed <= 0 || duration < totalSecondsElapsed) {
+                swapToFinishedView()
+            }
+            println(timeSpentLocked)
+            for var i = 0; i < timeSpentLocked; i++ {
+                countDown()
+                println("Ticking second")
+            }
+            progressView.progress += CGFloat((1/(Double(totalSecondsElapsed))) * 0.05)
+            updateTimeLabel()
+        }
+//        progressView.progress += CGFloat((1/(Double(duration))) * Double(timeSpentLocked))
+    }
+    
     func updateTimeLabel() {
         
         if (secondCounter == 0 || secondCounter < 10)  {
@@ -115,7 +139,7 @@ class ViewController: UIViewController {
     }
     
     func timerIsDone() -> Bool {
-        if (duration == totalSecondsElapsed){
+        if (duration <= totalSecondsElapsed){
             timeLabelUpdated = false
             bellSound.prepareToPlay()
             bellSound.play()
@@ -184,6 +208,7 @@ class ViewController: UIViewController {
     @IBAction func endView(sender: AnyObject) {
         swapToFinishedView()
     }
+    
     @IBAction func startTimer(sender : AnyObject) {
         secondCounter       = 0
         minuteCounter       = 60
@@ -281,18 +306,18 @@ class ViewController: UIViewController {
         progressView.removeFromSuperview()
         meditateAgainButton?.hidden = false
         tweetQuoteButton?.hidden = false
-        quoteLabel.hidden = false
+        quoteLabel?.hidden = false
         
         timePicker?.hidden = true
         timerLabel?.hidden = true
         startTimerButton?.hidden = true
-        whiteSpaceBlocker.hidden = true
-        whiteSpaceBlocker2.hidden = true
+        whiteSpaceBlocker?.hidden = true
+        whiteSpaceBlocker2?.hidden = true
         intitialTimeLabel?.hidden = true
         timeLabelUpdated = false
         quoteLabel?.font = UIFont(name: font, size: 17)
 
-        quoteLabel.text = quoteOfTheDay
+        quoteLabel?.text = quoteOfTheDay
     }
     
     //Mark - 🕑
@@ -312,7 +337,6 @@ class ViewController: UIViewController {
             self.hourCounter = 24
             swapToFinishedView()
             progressView.removeFromSuperview()
-
         }
     }
     
